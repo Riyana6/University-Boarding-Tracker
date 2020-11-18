@@ -1,12 +1,14 @@
 import React from 'react';
-
+import Footer from './Footer';
 import NavigationBar from './NavigationBar';
-import {Container,Row,Jumbotron,Col} from 'react-bootstrap';
+import {Container,Row,Jumbotron,Col,Image} from 'react-bootstrap';
+import logo from './house.jpeg'; 
 
 export default function Home() {
     const marginTop = {
         marginTop: "20px"
     }
+
     return (
         <div >
             <NavigationBar/>
@@ -19,12 +21,15 @@ export default function Home() {
                                 <p>
                                     Find your boarding or tell about your boarding places to us
                                 </p>
-                                <footer className="blackquote-footer">
-
-                                </footer>
+                                
+                                <Footer className="blackquote-footer">
+                                    <Footer/>
+                                </Footer>
                             </blackquore>
                         </Jumbotron>
+                        <Image src={logo} fluid />
                     </Col>
+                    
                     
                 </Row>
             </Container>
