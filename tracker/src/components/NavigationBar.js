@@ -1,5 +1,8 @@
 import React from 'react';
 import {Navbar, Nav} from 'react-bootstrap';
+import Login from './Login';
+import Signup from './Signup';
+import { Link } from 'react-router-dom';
 
 export default function NavigationBar() {
 
@@ -8,9 +11,18 @@ export default function NavigationBar() {
         <Navbar bg="dark" variant="dark">
             <Navbar.Brand href="/Home">Home</Navbar.Brand>
                 <Nav className="mr-auto">
-                <Nav.Link href="./Login">Login</Nav.Link>
-                <Nav.Link href="./Signup">Signup</Nav.Link>
+                <Nav><Link to="/Login">Login</Link></Nav>
+                <Nav><Link to="/Signup">Signup</Link></Nav>
             </Nav>
+            <Route
+                    path="/Login"
+                    component={Login}
+                    exact 
+                />
+                <Route
+                    path="/Signup"
+                    component={Signup} 
+                />
         </Navbar>
     );
 }

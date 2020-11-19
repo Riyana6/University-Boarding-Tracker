@@ -15,7 +15,7 @@ export default function Home() {
             <Container>
                 <Row>
                     <Col lg={12} style={marginTop}>
-                        <Jumbotron className="bg-dark text-white">
+                        <Jumbotron fluid>
                             <h1>Welcome to Uni Boarding Tracker</h1>
                             <blackquore className="blackquore mb-0">
                                 <p>
