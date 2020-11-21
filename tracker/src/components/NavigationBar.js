@@ -11,7 +11,7 @@ export default function NavigationBar() {
             <Nav className="mr-auto">
                 <Link to={"Login"} className="nav-link">Login</Link>
                 <Link to={"Signup"} className="nav-link">Signup</Link>
-            </Nav
+            </Nav>
         </Navbar>
     );
 }
