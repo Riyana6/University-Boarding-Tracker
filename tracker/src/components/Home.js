@@ -1,8 +1,12 @@
 import React from 'react';
-import Footer from './Footer';
+
 import NavigationBar from './NavigationBar';
-import {Container,Row,Jumbotron,Col,Image} from 'react-bootstrap';
-import logo from './house.jpeg'; 
+import {Container,Row,Col} from 'react-bootstrap';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Welcome from './Welcome';
+import Login from './Login';
+import Signup from './Signup';
+ 
 
 export default function Home() {
     const marginTop = {
@@ -10,30 +14,24 @@ export default function Home() {
     }
 
     return (
-        <div >
+        <Router >
             <NavigationBar/>
             <Container>
                 <Row>
                     <Col lg={12} style={marginTop}>
-                        <Jumbotron fluid>
-                            <h1>Welcome to Uni Boarding Tracker</h1>
-                            <blackquore className="blackquore mb-0">
-                                <p>
-                                    Find your boarding or tell about your boarding places to us
-                                </p>
-                                
-                                <Footer className="blackquote-footer">
-                                    <Footer/>
-                                </Footer>
-                            </blackquore>
-                        </Jumbotron>
-                        <Image src={logo} fluid />
+                        
+                        <Switch>
+                            <Route path="/Home" exact component={Welcome}/>
+                            <Route path="/Login" exact component={Login}/>
+                            <Route path="/Signup" exact component={Signup}/>
+                        </Switch>
+                        
                     </Col>
                     
                     
                 </Row>
             </Container>
-        </div>
+        </Router>
         
     );
 }
