@@ -14,3 +14,4 @@ export default function NavigationBar() {
             </Nav>
         </Navbar>
     );
+}
