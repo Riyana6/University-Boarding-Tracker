@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Jumbotron,Image,Col} from 'react-bootstrap';
+import {Jumbotron,Image,Col, Form,FormControl,Button,Navbar} from 'react-bootstrap';
 import Footer from './Footer';
 import logo from './house.jpeg';
 
@@ -18,6 +18,12 @@ export default function Home() {
                         <p>
                             Find your boarding or tell about your boarding places to us
                         </p>
+                        <Navbar bg="dark" variant="light">
+                        <Form inline align="center">
+                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                        <Button variant="outline-primary">Search</Button>
+                        </Form>
+                        </Navbar>
                         
                         <Footer className="blockquote-footer">
                             <Footer/>
