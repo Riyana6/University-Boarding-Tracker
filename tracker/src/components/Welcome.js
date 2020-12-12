@@ -8,7 +8,7 @@ export default function Home() {
     const marginTop = {
         marginTop: "20px"
     }
-
+    
     return (
         <div>
             <Col lg={12} style={marginTop}>
@@ -18,12 +18,14 @@ export default function Home() {
                         <p>
                             Find your boarding or tell about your boarding places to us
                         </p>
-                        <Navbar bg="dark" variant="light">
-                        <Form inline align="center">
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button variant="outline-primary">Search</Button>
-                        </Form>
-                        </Navbar>
+                        <div className="auth-wrapper">
+                            <Navbar bg="dark" variant="light" >
+                                <Form inline>
+                                <FormControl type="text" placeholder="Select your university" className="mr-sm-2" />
+                                <Button variant="outline-primary">Search</Button>
+                                </Form>
+                            </Navbar>
+                        </div>
                         
                         <Footer className="blockquote-footer">
                             <Footer/>
