@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Welcome from './Welcome';
 import Login from './Login';
 import Signup from './Signup';
+import UserHome from './userhome';
  
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
                             <Route path="/Home" exact component={Welcome}/>
                             <Route path="/Login" exact component={Login}/>
                             <Route path="/Signup" exact component={Signup}/>
+                            <Route path="/UserHome" exact component={UserHome}/>
                         </Switch>
                         
                     </Col>
