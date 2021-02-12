@@ -1,13 +1,21 @@
-import React from "react";
+import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 
-const FormPage = () => {
-    return (
-        <MDBContainer>
+export default class UserHome extends Component {
+    state = {
+        files: []
+      }
+    
+      fileSelectedHandler = (e) => {
+        this.setState({ files: [...this.state.files, ...e.target.files] })
+      }
+    render() {
+        return (
+            <MDBContainer>
             <MDBRow>
                 <MDBCol md="6">
                     <form>
-                        <p className="h4 text-center mb-4">Sign up</p>
+                        <p className="h4 text-center mb-4">Enter your Boarding Details</p>
                         <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
                             Boarding Name
                         </label>
@@ -28,24 +36,30 @@ const FormPage = () => {
                         </label>
                         <select id = "dropdown">
                             <option value="N/A">Select gender</option>
-                            <option value="1">Only for males</option>
-                            <option value="2">Only for females</option>
+                            <option value="male">Only for males</option>
+                            <option value="female">Only for females</option>
                         </select>
                         <br />
+                        <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">
+                            Add Images
+                        </label>
+                        <input type="file" multiple onChange={this.fileSelectedHandler} />
+                        <br/>
                         <label htmlFor="defaultFormRegisterPasswordEx" className="grey-text">
                             Additional Details
                         </label>
-                        <input type="password" id="defaultFormRegisterPasswordEx" className="form-control" />
+                        <input type="text" id="defaultFormRegisterPasswordEx" className="form-control" />
                         <div className="text-center mt-4">
-                            <MDBBtn color="unique" type="submit">
-                                Register
+                            
+                            <MDBBtn color="primary" type="submit">
+                                Add
                             </MDBBtn>
                         </div>
                     </form>
                 </MDBCol>
             </MDBRow>
         </MDBContainer>
-    );
-};
-
-export default FormPage;
+            
+        );
+    }
+}
